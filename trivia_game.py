@@ -3,13 +3,13 @@
 
 #question class
 class Question():
-    def __init__(question,answers,answer_number):
+    def __init__(self, question,answers,answer_number):
         self.question = question
         self.answers = answers
         self.answer_number = answer_number
 
     #getters
-    def get_question():
+    def get_question(self):
         return(self.question)
     def get_answers():
         return(self.answers)
@@ -17,24 +17,23 @@ class Question():
         return(answer_number)
 
     #setters
-    def set_question(q):
+    def set_question(self, q):
         self.question=question
     def set_answers(a):
         self.answers=answers
     def set_answer_number(a_n):
         self.answer_number=answer_number
 
-    def print_question():
+    def print_question(self):
         print(self.question)
         i=0
         for q in question_array:
             print("%d. "+q.format(i))
-            i++
+            i=i+1
 
-    def select_an_answer(number):        
+    def select_an_answer(self, number):        
         if number == self.answer_number:
             print("Congrats Right Answer")
-            r
         else:
             print("Incorrect answer")
             
@@ -42,14 +41,19 @@ class Question():
 def main():
     #the game
     #create an array of questions
-    question_list=[]
+    q1=Question("How many states are in America?", ["41","20","50","2"],3)
+    q2=Question("How many toes do cats have on their front paws?",["5","1","40","2"],1)
+    q3=Question("How many toes do dogs?",["0","4","1","50"],2)
+    q4=Question("Most popular pet in South Africa:",["41","20","50","2"],3)
+    q5=Question("What was the orginal char limit for Twitter?",["140","20","50","2"],3)
+    question_list=[q1,q2,q3,q4,q5]
     #scorekeeping var
     player_1=0
     player_2=0
     #loop for game
-    for i in range(10):
+    for i in range(4):
         
-        q=question[i]
+        q=question_list[i]
         q.print_question()
         
         #ask for input depending on question number        
@@ -77,3 +81,4 @@ def main():
                 print("That was incorrect")  
             
         
+main()
