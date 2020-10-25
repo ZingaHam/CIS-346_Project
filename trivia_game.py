@@ -43,17 +43,22 @@ class Question():
 def main():
     #the game
     #create an array of questions
-    q1=Question("How many states are in America?", ["41","20","50","2"],3)
-    q2=Question("How many toes do cats have on their front paws?",["5","1","40","2"],1)
-    q3=Question("How many toes do dogs have?",["0","4","1","50"],2)
-    q4=Question("Most popular Mariah Carey song",["Shake it off","Irreplaceable","All I Want for Christmas","We Belong Together"],4)
-    q5=Question("What was the orginal char limit for Twitter?",["140","20","50","2"],3)
-    question_list=[q1,q2,q3,q4,q5]
+    q0=Question("How many states are in America?", ["41","20","50","2"],3)
+    q1=Question("How many toes do cats have on their front paws?",["5","1","40","2"],1)
+    q2=Question("How many toes do dogs have?",["0","4","1","50"],2)
+    q3=Question("Most popular Mariah Carey song:",["Shake it off","Irreplaceable","All I Want for Christmas","We Belong Together"],4)
+    q4=Question("What was the orginal character limit for Twitter?",["140","20","50","2"],3)
+    q5=Question("When was Spelman founded?", ["2010","1881","1750","1776"],2)
+    q6=Question("What is the only U.S. state to grow coffee beans?",["Florida","California","Georgia","Hawaii"],4)
+    q7=Question("What was Google’s original name? ",["Googol","Oneshot","Backrub","Typist"],3)
+    q8=Question("What year was Pinterest founded in?",["2008","2009","2010","2011"],1)
+    q9=Question("Hg is the chemical symbol of which element?",["Gold","Silver","Hydrogen","Mercury"],4)
+    question_list=[q1,q2,q3,q4,q5,q6,q7,q8,q9]
     #scorekeeping var
     player_1=0
     player_2=0
     #loop for game
-    for i in range(4):
+    for i in range(10):
         
         q=question_list[i]
         q.print_question()
