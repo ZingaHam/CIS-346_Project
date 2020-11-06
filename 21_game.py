@@ -17,20 +17,27 @@ def main():
         #if player chooses to roll
         if player_ans.lower()=="r":
         #then simulate player and computer roll
-            player_score+=random.randint(1,6)+random.randint(1,6)
-            pc_score+=random.randint(1,6)+random.randint(1,6)
+            player_score+=roll()
+            pc_score+=roll()
 
         #if player chooses to continue
         elif player_ans.lower()=="c":
         #then simulate the computer roll
-            pc_score+=random.randint(1,6)+random.randint(1,6)
+            pc_score+=roll()
         #if quit
         elif player_ans.lower()=="q":
         #then break the loop
             playing=''
+    pick_winner(player_score, pc_score)
+           
+    
+        
+def roll():
+    return random.randint(1,6)+random.randint(1,6)
 
+def pick_winner(player_score, pc_score):
     #if player has more than pc or pc has more than 21
-    #but equal to/below 21 they win        
+    #but equal to/below 21 they win 
     if (player_score > pc_score or pc_score > 21) and player_score <= 21:
         print("You win!")
         print("Final Scores:\nPlayer:{}\nComputer:{}".format(player_score,pc_score))
@@ -50,7 +57,5 @@ def main():
     elif player_score > 21 and pc_score > 21:
         print("You're both over 21. No one won.")
         print("Final Scores:\nPlayer:{}\nComputer:{}".format(player_score,pc_score))
-        
-
 
 main()
