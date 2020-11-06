@@ -1,4 +1,4 @@
-#Scala Group
+#Scala Group | N. Hammonds-Wyatt, P. Sampson, K. Taylor
 #the "A Game of 21"
 import random
 
