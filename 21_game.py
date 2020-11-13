@@ -12,12 +12,12 @@ def main():
         if player_score!=0:
             print("Your score is: ",player_score)
             #print("PC score",pc_score)#test
-        player_ans=input("Would you like to roll, continue, or quit?(r,c,q) ")
+        player_ans=input("\nWould you like to roll, continue, or quit?(r,c,q) ")
         
         #if player chooses to roll
         if player_ans.lower()=="r":
         #then simulate player and computer roll
-            player_score+=roll()
+            player_score+=roll(True)
             pc_score+=roll()
 
         #if player chooses to continue
@@ -32,8 +32,12 @@ def main():
            
     
         
-def roll():
-    return random.randint(1,6)+random.randint(1,6)
+def roll(player=False):
+    a = random.randint(1,6)
+    b = random.randint(1,6)
+    if player:
+        print("\nDie 1: {} \nDie 2: {}".format(a,b))
+    return a+b
 
 def pick_winner(player_score, pc_score):
     #if player has more than pc or pc has more than 21
